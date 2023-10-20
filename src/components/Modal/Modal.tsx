@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import "./Modal.css";
 
-interface ModalProps {}
+interface ModalProps {
+  children: React.ReactNode
+}
 
 const Modal = (props: ModalProps) => {
   return (
-    <div>Modal</div>
+    <div className='modal'>{props.children}</div>
   )
 }
 
