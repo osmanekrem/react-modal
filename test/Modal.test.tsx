@@ -1,10 +1,10 @@
 import React from 'react';
 import {render} from "@testing-library/react";
 
-import Modal from './Modal';
+import Modal from '../src/components/Modal/Modal';
 
 describe("Modal", () => {
     test("renders the Modal component", () => {
-        render(<Modal>This is a test content</Modal>);
+        render(<Modal onClose={() => {}} isOpen>This is a test content</Modal>);
     });
 })

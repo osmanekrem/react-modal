@@ -1,19 +1,24 @@
-import type { Meta, StoryObj } from '@storybook/react';
 
 import Modal from '../components/Modal/Modal';
-
+import React from 'react';
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-const meta = {
+export default {
   title: 'Modal',
-  component: Modal,
-  args: {
-    children: 'Modal',
-  },
   tags: ['autodocs'],
-} satisfies Meta<typeof Modal>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
+};
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default: Story = {};
+export function BasicUsage()  {
+  const [isOpen, setIsOpen] = React.useState(false)
+    return (
+      <>
+        <button onClick={() => setIsOpen(prev => !prev)}>Click Me</button>
+        <Modal 
+          isOpen={isOpen} 
+          onClose={() => setIsOpen(false)}
+        >
+          Modal
+        </Modal>
+      </>
+    )
+};
